@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>Kebot</title>
+    <link>http://kebot.me/</link>
+    <description>Keith is Robot</description>
+    <pubDate>Sun, 27 Nov 2011 12:28:56 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>用VIM 写 CoffeeScript , 并实现时时编译</title>
+      <link>http://kebot.me/2011/07/vim-coffeescript/</link>
+      <pubDate>Fri, 15 Jul 2011 21:15:59 CST</pubDate>
+      <category><![CDATA[Front]]></category>
+      <category><![CDATA[JS]]></category>
+      <guid>http://kebot.me/?p=161</guid>
+      <description>用VIM 写 CoffeeScript , 并实现时时编译</description>
+      <content:encoded><![CDATA[
+神马是CoffeeScript
+=====================
+[Coffee Script](http://jashkenas.github.com/coffee-script/) 就是 JavaScript 但它比 JavaScript 有更好的语法,更简介的代码,更规范的编码规范,它留下了JavaScript 好的部分,去掉了不好的部分.
+
+这是CoffeeScript的介绍页面:[http://jashkenas.github.com/coffee-script/](http://jashkenas.github.com/coffee-script/)
+
+你可以用TRY COFFEESCRIPT尝试写一些script,然后程序会时时显示转换后的javascript代码.
+
+用VIM写CoffeeScript
+======================
+但我是用VIM写的代码,VIM需要一些配置,索幸,有人已经写了VIM的coffee script插件,地址在这里:[https://github.com/kchmck/vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+
+下面以Mac为例介绍下VIM配置CoffeeScript开发环境:
+
+<pre lang="bash">
+# 安装node.js
+brew install node.js
+# 安装npm
+# 安装coffee-script
+npm install -g coffee-script
+# 安装 [pathogen](http://www.vim.org/scripts/script.php?script_id=2332)
+cd ~/.vim/bundle
+git clone git://github.com/kchmck/vim-coffee-script.git
+# 打开 ~/.vimrc 加下面一行,可以实现保存时候自动编译成js文件
+autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+# 我写成这样保存时可以实时看到编译结果
+autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
+</pre>
+
+接着随便打开.coffee文件,写一点代码,保存的时候vim会自动生成 .js 文件]]></content:encoded>
+    </item>
+    <item>
+      <title>grayscale.js -- Make your website grey. 实现全站或者局部变黑白</title>
+      <link>http://kebot.me/2010/09/grayscale-js-make-your-website-grey-%e5%ae%9e%e7%8e%b0%e5%85%a8%e7%ab%99%e6%88%96%e8%80%85%e5%b1%80%e9%83%a8%e5%8f%98%e9%bb%91%e7%99%bd/</link>
+      <pubDate>Tue, 28 Sep 2010 19:16:25 CST</pubDate>
+      <category><![CDATA[Front]]></category>
+      <category><![CDATA[JS]]></category>
+      <guid>http://kebot.me/?p=31</guid>
+      <description>grayscale.js -- Make your website grey. 实现全站或者局部变黑白</description>
+      <content:encoded><![CDATA[
+<p style="clear: both;">Grayscale is a JQuery Plugin that l</p>
+<p style="clear: both;">Usage:</p>
+<p style="clear: both;"></p>
+
+<pre lang="JavaScript">
+var el = document.getElementById( 'myEl' );
+grayscale( el );
+ 
+// Alternatively, pass a DOM collection
+// (all elements will get "grayscaled")
+grayscale( document.getElementsByTagName('div') );
+ 
+// Even works with jQuery collections:
+grayscale( $('div') );
+</pre>
+<div>Website:<a href="http://james.padolsey.com/javascript/grayscaling-in-non-ie-browsers/" target="_blank">http://james.padolsey.com/javascript/grayscaling-in-non-ie-browsers/</a></div>
+<p style="clear: both;"></p>
+<p style="clear: both;">Demo: <a href="http://james.padolsey.com/demos/grayscale/" target="_blank">http://james.padolsey.com/demos/grayscale/</a></p>
+<p style="clear: both;"></p>
+<p style="clear: both;"></p>
+<p style="clear: both;"><img style="display: inline; float: left; margin: 0 10px 10px 0;" src="http://james.padolsey.com/wp-content/uploads/robotscompare_grayscale.png" alt="demo" width="500" height="391" align="left" /></p>
+<br class="final-break" style="clear: both;" />]]></content:encoded>
+    </item>
+  </channel>
+</rss>

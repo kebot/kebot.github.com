@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">Kebot</title>
+  <subtitle type="text">Keith is Robot</subtitle>
+
+  <updated>2011-11-27T12:28:56Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://kebot.me/" />
+  <id>http://kebot.me//feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://kebot.me//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://kebot.me/</uri>
+    </author>
+    <title type="html"><![CDATA[Sync Your ITunes]]></title>
+    <link rel="alternate" type="text/html" href="http://kebot.me/2010/09/syncyouritunes/" />
+    <id>http://kebot.me/2010/09/syncyouritunes/</id>
+    <updated>2010-09-26T07:45:50Z</updated>
+    <published>2010-09-26T07:45:50Z</published>
+    <category scheme="http://kebot.me/" term="Python" />
+    <category scheme="http://kebot.me/" term="Project" />
+    <category scheme="http://kebot.me/" term="Mac" />
+    <summary type="html"><![CDATA[Sync Your ITunes]]></summary>
+    <content type="html" xml:base="http://kebot.me/2010/09/syncyouritunes/"><![CDATA[
+<a href="http://kebot.me/wp-content/uploads/2010/09/icon-grey.jpg"><img class="alignnone size-medium wp-image-5" title="icon-grey" src="http://kebot.me/wp-content/uploads/2010/09/icon-grey-281x300.jpg" alt="" width="281" height="300" /></a>
+
+Project Home:
+
+http://code.google.com/p/syncyouritunes/]]></content>
+  </entry>
+</feed>

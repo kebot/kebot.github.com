@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>Kebot</title>
+    <link>http://kebot.me/</link>
+    <description>Keith is Robot</description>
+    <pubDate>Sun, 27 Nov 2011 12:28:56 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Disqus -- 新兴的评论系统</title>
+      <link>http://kebot.me/2011/03/disqus-%e6%96%b0%e5%85%b4%e7%9a%84%e8%af%84%e8%ae%ba%e7%b3%bb%e7%bb%9f/</link>
+      <pubDate>Tue, 08 Mar 2011 20:51:04 CST</pubDate>
+      <category><![CDATA[PHP]]></category>
+      <category><![CDATA[Wordpress]]></category>
+      <category><![CDATA[动手玩]]></category>
+      <guid>http://kebot.me/?p=127</guid>
+      <description>Disqus -- 新兴的评论系统</description>
+      <content:encoded><![CDATA[
+不止一次在别人的评论系统里面看到了Disqus的身影~~
+
+DISQUZ是一个管理站点评论的插件,它的方便之处在于,在这个社会化的时代,让你的博客和各种社会化网络连接,包括[Twitter](http://twitter.com/) , [Facebook](http://facebook.com/) , [Yahoo](http://yahoo.com/) 等社会化网络进行连接. 很方便地进行单点登陆 .
+
+你可以在DISQUZ网站上管理你参与过的评论,你"喜欢"过的文章,回复别人的评论等等...确实方便了不少.
+
+## What I want do? ##
+既然提供了单点登陆,我联想起国内的众多服务,是不是可以用Disqus的API来实现:新浪/腾讯围脖,豆瓣,Gmail等进行登陆呢?
+
+<未完>
+
+
+[DISQUZ官方网站](http://disqus.com/)
+
+[DISQUZ Wordpress Plugin](http://wordpress.org/extend/plugins/disqus-comment-system/)]]></content:encoded>
+    </item>
+  </channel>
+</rss>
