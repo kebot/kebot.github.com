@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Kebot | Keith is Robot</title>
+    <link href="http://kebot.me/feed.xml" rel="self" />
+    
+    <link href="http://kebot.me" />
+    
+    <updated>2011-12-07T20:18:43Z</updated>
+    <id>http://kebot.me</id>
+    <entry>
+        <title type="html"><![CDATA[Blog move to liquidluck]]></title>
+        <author><name>Kebot</name><uri>http://kebot.me</uri></author>
+        <link href="http://kebot.me/2011/again.html"/>
+        <updated>2011-12-07T00:00:00Z</updated>
+        <published>2011-12-07T00:00:00Z</published>
+        <id>http://kebot.me/2011/again.html</id>
+        <category scheme="http://kebot.me/tag/date/" term="date" label="Date" />
+        <content type="html" xml:base="http://kebot.me" xml:lang="en">
+            <![CDATA[ <p><a href="" title="http://github.com/lepture/liquidluck">LiquidLuck</a> is a static blog
+generator.</p> ]]>
+        </content>
+    </entry>
+    </feed>
