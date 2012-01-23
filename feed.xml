@@ -1,19 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Kebot | Keith is Robot</title>
-    <link href="http://kebot.me/feed.xml" rel="self" />
+    <link href="http://kebot.me/feed/" rel="self" />
     
     <link href="http://kebot.me" />
     
-    <updated>2011-12-07T20:23:18Z</updated>
+    <updated>2012-01-23T15:02:06Z</updated>
     <id>http://kebot.me</id>
+    <entry>
+        <title type="html"><![CDATA[]]></title>
+        <author><name>Kebot</name><uri>http://kebot.me</uri></author>
+        <link href="http://kebot.me/2011/"/>
+        <updated>2012-01-08T00:00:00Z</updated>
+        <published>2012-01-08T00:00:00Z</published>
+        <id>http://kebot.me/2011/</id>
+        <category scheme="http://kebot.me/tag/date/" term="date" label="Date" />
+        <category scheme="http://kebot.me/tag/漉ii/" term="漉II" label="漉Ii" />
+        <content type="html" xml:base="http://kebot.me" xml:lang="en">
+            <![CDATA[ <p>每段岁月,给它取名,让它过去,但也要留点记忆.</p>
+<p>公元2010年,称为"漉",取,忙碌,湿漉
+2011年,是"漉"的第二年</p>
+<p>这一年我22周岁,我不是特别忙碌,但下体一般是湿漉漉的.</p>
+<p>没有写诗
+    因为没有情绪
+谈了一次恋爱
+    还是处男</p>
+<p>三月前记不清了
+四月去了趟武汉,五月去了北京
+七月到了四川,然后我奔向北京
+在北京呆了两个月,九月回杭州
+十月份骑车环了一次太湖
+十一月可能去了一次千岛湖,是宅着的
+年末在南京</p>
+<p>大部分的生活都围绕着音乐,代码和骑行展开.有点单调,但也很cool</p>
+<p>看了几百部电影,十几本书可能,听了几十张专辑吧</p>
+<p>新认识了几十个朋友,淡忘了很多老朋友.</p>
+<p>越到后来,对于这个世界,我还是在一步步的试错</p>
+<pre><code>i'm `听临`
+</code></pre> ]]>
+        </content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Blog move to liquidluck]]></title>
         <author><name>Kebot</name><uri>http://kebot.me</uri></author>
-        <link href="http://kebot.me/2011/again.html"/>
+        <link href="http://kebot.me/again/"/>
         <updated>2011-12-07T00:00:00Z</updated>
         <published>2011-12-07T00:00:00Z</published>
-        <id>http://kebot.me/2011/again.html</id>
+        <id>http://kebot.me/again/</id>
         <category scheme="http://kebot.me/tag/date/" term="date" label="Date" />
         <content type="html" xml:base="http://kebot.me" xml:lang="en">
             <![CDATA[ <p><a href="" title="http://github.com/lepture/liquidluck">LiquidLuck</a> is a static blog
