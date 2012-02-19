@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kebot | Keith is Robot - 用VIM 写 CoffeeScript , 并实现时时编译</title>
+        <script>if (top !== self) top.location = self.location;</script>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="initial-scale=1; maximum-scale=1; user-scalable=0;" />
+        
+<meta name="author" content="Kebot" />
+
+        
+        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="stylesheet" href="/static/style.css?v=be835" />
+        
+<link rel="stylesheet" href="/static/syntax.css?v=dbf77" />
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <ul id="nav" class="fn-clear">
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/tag/">Tags</a></li>
+                    
+                </ul>
+            </div>
+            <div id="container">
+                
+<h1 class="article-title">
+    <a href="/2011/7/vim-coffeescript/index/" rel="self">用VIM 写 CoffeeScript , 并实现时时编译</a>
+</h1>
+<div class="article-meta fn-clear">
+    <p class="article-time fn-left">
+    Created at: <a href="/2011/" rel="archive"><time datetime="2011-07-15 00:00:00">Fri, Jul 15, 2011</a>
+    </p>
+    <p class="article-tags fn-left">
+    Tagged in:
+    
+    </p>
+</div>
+<div class="article">
+    <div class="article-content">
+        <h1>神马是CoffeeScript</h1>
+<p><a href="http://jashkenas.github.com/coffee-script/">Coffee Script</a> 就是 JavaScript 但它比 JavaScript 有更好的语法,更简介的代码,更规范的编码规范,它留下了JavaScript 好的部分,去掉了不好的部分.</p>
+<p>这是CoffeeScript的介绍页面:<a href="http://jashkenas.github.com/coffee-script/">http://jashkenas.github.com/coffee-script/</a></p>
+<p>你可以用TRY COFFEESCRIPT尝试写一些script,然后程序会时时显示转换后的javascript代码.</p>
+<h1>用VIM写CoffeeScript</h1>
+<p>但我是用VIM写的代码,VIM需要一些配置,索幸,有人已经写了VIM的coffee script插件,地址在这里:<a href="https://github.com/kchmck/vim-coffee-script">https://github.com/kchmck/vim-coffee-script</a></p>
+<p>下面以Mac为例介绍下VIM配置CoffeeScript开发环境:</p>
+<pre lang="bash">
+# 安装node.js
+brew install node.js
+# 安装npm
+# 安装coffee-script
+npm install -g coffee-script
+# 安装 [pathogen](http://www.vim.org/scripts/script.php?script_id=2332)
+cd ~/.vim/bundle
+git clone git://github.com/kchmck/vim-coffee-script.git
+# 打开 ~/.vimrc 加下面一行,可以实现保存时候自动编译成js文件
+autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+# 我写成这样保存时可以实时看到编译结果
+autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
+</pre>
+
+<p>接着随便打开.coffee文件,写一点代码,保存的时候vim会自动生成 .js 文件</p>
+    </div>
+    <div class="fn-clear">
+        <p class="article-rel fn-right">
+        
+        
+        </p>
+    </div>
+</div>
+
+            </div>
+            <div id="footer">
+                <div class="copyright ft-right">Copyright by <a href="http://kebot.me">Kebot | Keith is Robot</a> | Powered by <a href="http://lepture.com/project/liquidluck">Felix Felicis</a></div>
+            </div>
+        </div>
+    </body>
+</html>
