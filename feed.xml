@@ -5,15 +5,15 @@
     
     <link href="http://kebot.me" />
     
-    <updated>2012-02-19T22:36:33Z</updated>
+    <updated>2012-02-20T00:10:24Z</updated>
     <id>http://kebot.me</id>
     <entry>
         <title type="html"><![CDATA[Sass and Compass]]></title>
         <author><name>Kebot</name><uri>http://kebot.me</uri></author>
-        <link href="http://kebot.me/2012/2/compass/"/>
+        <link href="http://kebot.me/gituns/compass/"/>
         <updated>2012-02-13T00:00:00Z</updated>
         <published>2012-02-13T00:00:00Z</published>
-        <id>http://kebot.me/2012/2/compass/</id>
+        <id>http://kebot.me/gituns/compass/</id>
         <content type="html" xml:base="http://kebot.me" xml:lang="en">
             <![CDATA[ <p>Compass</p> ]]>
         </content>
