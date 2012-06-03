@@ -5,7 +5,7 @@
     
     <link href="http://kebot.me" />
     
-    <updated>2012-06-03T20:05:33Z</updated>
+    <updated>2012-06-03T20:24:16Z</updated>
     <id>http://kebot.me</id>
     <entry>
         <title type="html"><![CDATA[在 Mac 上部署 Nginx]]></title>
@@ -185,10 +185,10 @@ generator.</p>
     <entry>
         <title type="html"><![CDATA[文件保存时自动刷新浏览器 F5 For Mac and VIM]]></title>
         <author><name>Kebot</name><uri>http://kebot.me</uri></author>
-        <link href="http://kebot.me/2011/9/%e6%96%87%e4%bb%b6%e4%bf%9d%e5%ad%98%e6%97%b6%e8%87%aa%e5%8a%a8%e5%88%b7%e6%96%b0%e6%b5%8f%e8%a7%88%e5%99%a8-f5-for-mac-and-vim/"/>
+        <link href="http://kebot.me/2011/9/live-reloader/"/>
         <updated>2011-09-15T00:00:00Z</updated>
         <published>2011-09-15T00:00:00Z</published>
-        <id>http://kebot.me/2011/9/%e6%96%87%e4%bb%b6%e4%bf%9d%e5%ad%98%e6%97%b6%e8%87%aa%e5%8a%a8%e5%88%b7%e6%96%b0%e6%b5%8f%e8%a7%88%e5%99%a8-f5-for-mac-and-vim/</id>
+        <id>http://kebot.me/2011/9/live-reloader/</id>
         <content type="html" xml:base="http://kebot.me" xml:lang="en">
             <![CDATA[ <p>最近发现 <a href="http://www.getf5.com/">F5</a>这个插件很火,于是去看了下简介,其实就是检测一个文件夹里面的文件改动,然后自动刷新浏览器,不过看上去只支持windows. 因为我一直在用 VIM , 于是就写了几行代码实现了 &ldquo;保存文件自动刷新这个功能&rdquo; 不过,首先,必须确保你的机器是Mac和GoogleChrome浏览器 为了让代码更加Python一点,于是我用了appscript这个python库,所以要先运行下这行代码 
 <pre lang="bash"> 
@@ -278,10 +278,10 @@ autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
     <entry>
         <title type="html"><![CDATA[用Commandline-Cocoa在命令行中快速调试Objective-C/Cocoa代码]]></title>
         <author><name>Kebot</name><uri>http://kebot.me</uri></author>
-        <link href="http://kebot.me/2011/6/%e7%94%a8commandline-cocoa%e5%9c%a8%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e5%bf%ab%e9%80%9f%e8%b0%83%e8%af%95objective-ccocoa%e4%bb%a3%e7%a0%81/"/>
+        <link href="http://kebot.me/2011/6/commandline-cocoa/"/>
         <updated>2011-06-28T00:00:00Z</updated>
         <published>2011-06-28T00:00:00Z</published>
-        <id>http://kebot.me/2011/6/%e7%94%a8commandline-cocoa%e5%9c%a8%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e5%bf%ab%e9%80%9f%e8%b0%83%e8%af%95objective-ccocoa%e4%bb%a3%e7%a0%81/</id>
+        <id>http://kebot.me/2011/6/commandline-cocoa/</id>
         <content type="html" xml:base="http://kebot.me" xml:lang="en">
             <![CDATA[ <p>学习一门语言是一个不断试错的过程,对于我来说,脚本语言的方便之处是可以快速地运行,调试&hellip; PHP,Python,JavaScript&hellip;这些脚本语言都可以不借助第三方工具,快速进行调试&hellip;</p>
 <p> </p>
@@ -308,16 +308,35 @@ autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
         </content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[GiTuns New Version]]></title>
+        <title type="html"><![CDATA[GiTuns in Mac App Store Status:Rejected.第一次被拒]]></title>
         <author><name>Kebot</name><uri>http://kebot.me</uri></author>
-        <link href="http://kebot.me/2011/4/%e6%96%b0%e7%95%8c%e9%9d%a2-%e5%8d%8a%e9%80%8f%e6%98%8e-%e7%aa%97%e5%8f%a3%e7%bd%ae%e9%a1%b6-gituns-%e6%9c%80%e6%96%b0%e5%bc%80%e5%8f%91%e7%89%88/"/>
-        <updated>2011-04-25T00:00:00Z</updated>
-        <published>2011-04-25T00:00:00Z</published>
-        <id>http://kebot.me/2011/4/%e6%96%b0%e7%95%8c%e9%9d%a2-%e5%8d%8a%e9%80%8f%e6%98%8e-%e7%aa%97%e5%8f%a3%e7%bd%ae%e9%a1%b6-gituns-%e6%9c%80%e6%96%b0%e5%bc%80%e5%8f%91%e7%89%88/</id>
+        <link href="http://kebot.me/2011/3/gituns-in-mac-app-store-statusrejected/"/>
+        <updated>2011-03-19T00:00:00Z</updated>
+        <published>2011-03-19T00:00:00Z</published>
+        <id>http://kebot.me/2011/3/gituns-in-mac-app-store-statusrejected/</id>
         <content type="html" xml:base="http://kebot.me" xml:lang="en">
-            <![CDATA[ <p>GiTuns</p>
+            <![CDATA[ <p><em>事情总不是进展那么顺利. GiTuns被App Store拒绝了</em></p>
 
-<p><img src="https://img.skitch.com/20110425-rfc6tp8g6d6sjqh69r2rgpdtbf.jpg" alt="GiTuns"></p>
+<p>原因有二:
+2.3 Apps that do not perform as advertised by the developer will be rejected
+2.21 Apps may not use update mechanisms outside of the App Store</p>
+
+<p>主要是2.3:</p>
+
+<blockquote>
+Apple said this:
+
+Words Darker Than Their Wings.mp3 by Alter Bridge
+City Of Night.mp3 by Bruce Springsteen
+Respect Yourself.mp3 by Huey Lewis And The News
+Honest Face.mp3 by Liam Finn + Eliza Jane
+O Christmas Tree - Album Version by VeggieTales (Veggie Tunes)
+
+Searched each song via both search machines. No lyrics found.
+
+</blockquote>
+
+<p>Will add some Engine that support more English song.</p>
  ]]>
         </content>
     </entry>

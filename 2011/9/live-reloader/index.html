@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>GiTuns ~ Lyrics For ITunes on Mac | Kebot | Keith is Robot</title>
+        <title>文件保存时自动刷新浏览器 F5 For Mac and VIM | Kebot | Keith is Robot</title>
         <script>if (top !== self) top.location = self.location;</script>
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
@@ -13,7 +13,7 @@
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
-<link rel="canonical" href="/2011/2/gituns/" />
+<link rel="canonical" href="/2011/9/live-reloader/" />
 <link rel="stylesheet" href="/static/syntax.css?v=dbf77" />
 
         
@@ -30,7 +30,7 @@
          
          <article class="hentry">
              <header class="entry-header fn-clear">
-                 <h1 class="entry-title fn-left"><a href="/2011/2/gituns/">GiTuns ~ Lyrics For ITunes on Mac</a></h1>
+                 <h1 class="entry-title fn-left"><a href="/2011/9/live-reloader/">文件保存时自动刷新浏览器 F5 For Mac and VIM</a></h1>
                  
                  <form id="search-form" action="http://www.google.com/search">
                      <input type="hidden" name="q" value="site:http://kebot.me" />
@@ -41,33 +41,37 @@
              
 <div class="entry">
     <div class="entry-content">
-        <p>GiTuns is newly-invented iTunes partner. It makes an easier way to fetch and
-display the right lyric for the track you are playing in iTunes. With GiTuns,
-you can also control the music playing in a more convenient way. The lyric
-also will add to the music file so you can view it in iPod , iPad and iPhone.
-Different from other apps, GiTuns displays lyrics in a new way: The lyrics are
-downloaded and added into the Lyric-box, auto-scroll itself to the current
-line of your track. Thus, you can clearly see what the singer is currently
-singing. = = = = = = ====================================================
-Screen Shot:
-<img src="https://img.skitch.com/20110219-nb2q8h1ji7x3b29wbksgi6q46g.jpg" alt="GiTuns">
-<a href="http://kebot.me/download/gituns-latest.php">Download Preview Version~~</a>
-Release Note for Preview Version: Preview 2.2.6: Bug Fix,一些显而易见的bug,和优化~
-Preview 2.2.5: 1. 新的界面 , 感谢Cat设计这么好的界面~ 2. 增加歌词服务器取代MiniLyric(服务不可用) 3. 数项细节更新
-Preview 2.2.3: * 重大bug修正~~之前下载不能打开程序请重新下载最新版~~ Preview 2.2.2: * Bug 修正 , 增加稳定性
-Release 2.2: 1.增加歌词服务器:迷你歌词和千千静听,可随时更换~ 2.可选择嵌入歌词到音乐文件里 方便iPhone / iPod查看~ 3.
-菜单栏里可选择(redownload) 重新下载歌词~ 4. 打开软件自动已经打开歌词界面,点击专辑图片关闭歌词界面~ 5.
-在多款歌词的时候,可选择等待多少秒后自动下载第一款歌词~ Preview 2.1: 1.歌词拖拽功能~ 2.多款歌词选择功能~
-3.没有搜索到歌词将弹出,歌曲信息更新页面~ 意见建议欢迎到以下页面留言~ http://kebot.me/gituns/</p>
+        <p>最近发现 <a href="http://www.getf5.com/">F5</a>这个插件很火,于是去看了下简介,其实就是检测一个文件夹里面的文件改动,然后自动刷新浏览器,不过看上去只支持windows. 因为我一直在用 VIM , 于是就写了几行代码实现了 &ldquo;保存文件自动刷新这个功能&rdquo; 不过,首先,必须确保你的机器是Mac和GoogleChrome浏览器 为了让代码更加Python一点,于是我用了appscript这个python库,所以要先运行下这行代码 
+<pre lang="bash"> 
+easy_install appscript </p>
+
+<h1>或者</h1>
+
+<p>pip install appscript 
+</pre></p>
+
+<p>然后将下面这些话加入你的 .vimrc 
+<pre lang="python"> 
+autocmd BufWritePost <em>.coffee,</em>.css,*.html :call Refresh_Chrome()</p>
+
+<p>function! Refresh_Chrome()
+python &lt;&lt; EOF
+import appscript
+appscript.app(&quot;Google Chrome&quot;).windows[0].active_tab.reload()
+EOF
+endfunction</p>
+
+<p></pre>
+======================================================================== 现在已经够用了,以后可以考虑写一个python脚本来监测文件夹的改动并刷新浏览器</p>
 
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">
         
-        <a id="prev-entry" href="/2011/3/python-your-mac/" title="Python Your Mac (1) - 概述" rel="prev">«Prev</a>
+        <a id="prev-entry" href="/2011/12/again/" title="Blog move to liquidluck" rel="prev">«Prev</a>
         
         
-        <a id="next-entry" href="/2011/1/php5/" title="PHP5.3中覆盖静态类中的方法" rel="next">Next»</a>
+        <a id="next-entry" href="/2011/8/v-for-lyrics-gitunsdynamiclyrics-%e6%94%b9%e5%90%8d/" title="< V for Lyrics > GiTuns+DynamicLyrics 改名" rel="next">Next»</a>
         
         </p>
     </div>
@@ -75,7 +79,7 @@ Release 2.2: 1.增加歌词服务器:迷你歌词和千千静听,可随时更换
 <div class="entry-meta fn-clear">
     <p class="entry-time fn-left">
     Created at: 
-    <a href="/2011/" rel="index"><time class="updated" datetime="2011-02-09T00:00:00Z" pubdate>Wed, Feb 09, 2011</time></a>
+    <a href="/2011/" rel="index"><time class="updated" datetime="2011-09-15T00:00:00Z" pubdate>Thu, Sep 15, 2011</time></a>
     </p>
     
 </div>
@@ -83,7 +87,7 @@ Release 2.2: 1.增加歌词服务器:迷你歌词和千千静听,可随时更换
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'kebot';
-    var disqus_title = 'GiTuns ~ Lyrics For ITunes on Mac';
+    var disqus_title = '文件保存时自动刷新浏览器 F5 For Mac and VIM';
     (function() {
      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
