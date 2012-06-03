@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2011/1/php5-3%e4%b8%ad%e8%a6%86%e7%9b%96%e9%9d%99%e6%80%81%e7%b1%bb%e4%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95/" />
@@ -41,38 +41,47 @@
              
 <div class="entry">
     <div class="entry-content">
-        <p>经常遇到这样的情况,想改变库中的一个静态方法,然后让继承过来的其它方法也是调用子类中新的方法...</p>
+        <p>经常遇到这样的情况,想改变库中的一个静态方法,然后让继承过来的其它方法也是调用子类中新的方法&hellip;</p>
+
 <p>比如父类中有format 和 do两个方法,子类中覆盖了父类的format方法,然后do中调用format方法,会遇到什么情况呢?
 <pre lang="PHP">&lt;!--?php
 class Book {
   public static format()
   {
-    print 'This is format called from Book';
+    print &#39;This is format called from Book&#39;;
   }</p>
+
 <p>public static do()
   {
     self::format();
     static::format();
   }
 }</p>
+
 <p>class E_Book extends Book {
   public static format()
   {
-    print 'This is format called from E_Book'
+    print &#39;This is format called from E_Book&#39;
   }
 }</p>
+
 <p>E_Book::do();
 ?--&gt;</pre>
 运行的结果是:</p>
-<p>self::format()的结果是:'This is format called from Book'</p>
-<p>static::format()的结果是:'This is format called from E_Book'</p>
+
+<p>self::format()的结果是:&#39;This is format called from Book&#39;</p>
+
+<p>static::format()的结果是:&#39;This is format called from E_Book&#39;</p>
+
 <p>这里运用的是PHP语言里的后期静态绑定,详细见:</p>
+
 <p>http://www.php.net/manual/zh/language.oop5.late-static-bindings.php</p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">
         
-        <a id="prev-entry" href="/gituns/" title="GiTuns ~ Lyrics For ITunes on Mac" rel="prev">«Prev</a>
+        <a id="prev-entry" href="/2011/2/gituns/" title="GiTuns ~ Lyrics For ITunes on Mac" rel="prev">«Prev</a>
         
         
         <a id="next-entry" href="/2010/12/d2%e5%89%8d%e7%ab%af%e6%8a%80%e6%9c%af%e8%ae%ba%e5%9d%9b/" title="D2前端技术论坛" rel="next">Next»</a>

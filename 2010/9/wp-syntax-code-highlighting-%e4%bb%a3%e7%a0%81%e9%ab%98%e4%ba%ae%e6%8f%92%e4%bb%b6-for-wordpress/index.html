@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2010/9/wp-syntax-code-highlighting-%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%8f%92%e4%bb%b6-for-wordpress/" />
@@ -42,20 +42,28 @@
 <div class="entry">
     <div class="entry-content">
         <p>WP-Syntax provides clean syntax highlighting for embedding source code within pages or posts.</p>
-<p>WP-Syntax provides clean syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a> -- supporting a wide range of popular languages. It supports highlighting with or without line numbers and maintains formatting while copying snippets of code from the browser.</p>
+
+<p>WP-Syntax provides clean syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a> &ndash; supporting a wide range of popular languages. It supports highlighting with or without line numbers and maintains formatting while copying snippets of code from the browser.</p>
+
 <p>It avoids conflicts with other 3rd party plugins by running an early pre-filter and a late post-filter that substitutes and pulls the code snippets out first and then pushes them back in with highlighting at the end. The result is source code formatted and highlighted the way you intended.</p>
+
 <p>This plugin was originally written for use with <a href="http://www.emacsblog.org/">EmacsBlog</a>. To see it in action, scroll through this <a href="http://www.emacsblog.org/2007/02/22/maximize-on-startup-part-2/">particular post</a> or visit the <a href="http://wordpress.org/extend/plugins/wp-syntax/screenshots/">screenshots</a>.</p>
+
 <p>Usage, Supported Languages, Styling Guidelines, and Release Notes are availabe in the <a href="http://wordpress.org/extend/plugins/wp-syntax/other_notes/">Other Notes</a> section.
 <h4>Basic Usage</h4>
-Wrap code blocks with <code>&lt;pre lang="LANGUAGE" line="1"&gt;</code> and <code>&lt;/pre&gt;</code> where LANGUAGE is a <a href="http://qbnz.com/highlighter/">GeSHi</a> supported language syntax. The <code>line</code> attribute is optional.<a href="http://wordpress.org/extend/plugins/wp-syntax/other_notes/">More usage examples</a></p>
+Wrap code blocks with <code>&lt;pre lang=&quot;LANGUAGE&quot; line=&quot;1&quot;&gt;</code> and <code>&lt;/pre&gt;</code> where LANGUAGE is a <a href="http://qbnz.com/highlighter/">GeSHi</a> supported language syntax. The <code>line</code> attribute is optional.<a href="http://wordpress.org/extend/plugins/wp-syntax/other_notes/">More usage examples</a></p>
+
 <p>Support Language:
 abap, actionscript, actionscript3, ada, apache, applescript, apt_sources, asm, asp, autoit, avisynth, bash, bf, bibtex, blitzbasic, bnf, boo, c, c_mac, caddcl, cadlisp, cil, cfdg, cfm, cmake, cobol, cpp-qt, cpp, csharp, css, d, dcs, delphi, diff, div, dos, dot, eiffel, email, erlang, fo, fortran, freebasic, genero, gettext, glsl, gml, bnuplot, groovy, haskell, hq9plus, html4strict, idl, ini, inno, intercal, io, java, java5, javascript, kixtart, klonec, klonecpp, latex, lisp, locobasic, lolcode lotusformulas, lotusscript, lscript, lsl2, lua, m68k, make, matlab, mirc, modula3, mpasm, mxml, mysql, nsis, oberon2, objc, ocaml-brief, ocaml, oobas, oracle11, oracle8, pascal, per, pic16, pixelbender, perl, php-brief, php, plsql, povray, powershell, progress, prolog, properties, providex, python, qbasic, rails, rebol, reg, robots, ruby, sas, scala, scheme, scilab, sdlbasic, smalltalk, smarty, sql, tcl, teraterm, text, thinbasic, tsql, typoscript, vb, vbnet, verilog, vhdl, vim, visualfoxpro, visualprolog, whitespace, whois, winbatch, xml, xorg_conf, xpp, z80</p>
+
 <p>JavaScript:
-<pre lang="JavaScript">alert("hello wordpress.");</pre></p>
+<pre lang="JavaScript">alert(&quot;hello wordpress.&quot;);</pre></p>
+
 <p>PHP
 <pre lang="PHP">
-echo "The douban apikey is "."doubanclaim655a5a817e04712b";
+echo &quot;The douban apikey is &quot;.&quot;doubanclaim655a5a817e04712b&quot;;
 </pre></p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">

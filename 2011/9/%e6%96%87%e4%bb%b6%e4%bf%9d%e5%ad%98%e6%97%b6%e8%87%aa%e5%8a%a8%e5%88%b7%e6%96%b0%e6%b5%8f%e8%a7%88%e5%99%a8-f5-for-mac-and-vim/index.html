@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2011/9/%e6%96%87%e4%bb%b6%e4%bf%9d%e5%ad%98%e6%97%b6%e8%87%aa%e5%8a%a8%e5%88%b7%e6%96%b0%e6%b5%8f%e8%a7%88%e5%99%a8-f5-for-mac-and-vim/" />
@@ -41,23 +41,29 @@
              
 <div class="entry">
     <div class="entry-content">
-        <p>最近发现 <a href="http://www.getf5.com/">F5</a>这个插件很火,于是去看了下简介,其实就是检测一个文件夹里面的文件改动,然后自动刷新浏览器,不过看上去只支持windows. 因为我一直在用 VIM , 于是就写了几行代码实现了 "保存文件自动刷新这个功能" 不过,首先,必须确保你的机器是Mac和GoogleChrome浏览器 为了让代码更加Python一点,于是我用了appscript这个python库,所以要先运行下这行代码 
+        <p>最近发现 <a href="http://www.getf5.com/">F5</a>这个插件很火,于是去看了下简介,其实就是检测一个文件夹里面的文件改动,然后自动刷新浏览器,不过看上去只支持windows. 因为我一直在用 VIM , 于是就写了几行代码实现了 &ldquo;保存文件自动刷新这个功能&rdquo; 不过,首先,必须确保你的机器是Mac和GoogleChrome浏览器 为了让代码更加Python一点,于是我用了appscript这个python库,所以要先运行下这行代码 
 <pre lang="bash"> 
 easy_install appscript </p>
+
 <h1>或者</h1>
+
 <p>pip install appscript 
 </pre></p>
+
 <p>然后将下面这些话加入你的 .vimrc 
 <pre lang="python"> 
 autocmd BufWritePost <em>.coffee,</em>.css,*.html :call Refresh_Chrome()</p>
+
 <p>function! Refresh_Chrome()
 python &lt;&lt; EOF
 import appscript
-appscript.app("Google Chrome").windows[0].active_tab.reload()
+appscript.app(&quot;Google Chrome&quot;).windows[0].active_tab.reload()
 EOF
 endfunction</p>
+
 <p></pre>
 ======================================================================== 现在已经够用了,以后可以考虑写一个python脚本来监测文件夹的改动并刷新浏览器</p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">

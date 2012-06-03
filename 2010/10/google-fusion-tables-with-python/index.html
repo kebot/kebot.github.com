@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2010/10/google-fusion-tables-with-python/" />
@@ -46,37 +46,47 @@
 <pre lang="python">import sys
 import os
 from ftclient import *
-TABLE_COLUMN =('word','STRING') , ('data','DATETIME') , ('sentence','STRING') ,('url' , 'STRING')
-TABLE_NAME = "tableKebot"
+TABLE_COLUMN =(&#39;word&#39;,&#39;STRING&#39;) , (&#39;data&#39;,&#39;DATETIME&#39;) , (&#39;sentence&#39;,&#39;STRING&#39;) ,(&#39;url&#39; , &#39;STRING&#39;)
+TABLE_NAME = &quot;tableKebot&quot;
 def main():
-    email = 'kebot'
-    password = 'http://kebot.me/'
+    email = &#39;kebot&#39;
+    password = &#39;http://kebot.me/&#39;
     token = GetAuthToken(email,password)
     fb = FTClient(token)</p>
+
 <pre><code>fb.createTable(TABLE_NAME,TABLE_COLUMN)
 
-pass
-</code></pre>
-<p>if <strong>name</strong> == "<strong>main</strong>":
+pass</code></pre>
+
+<p>if <strong>name</strong> == &ldquo;<strong>main</strong>&rdquo;:
     main()
 </pre></p>
+
 <p>上面用到的FTClient库:
 <pre lang="python">#!/usr/bin/python</p>
-<h1></h1>
+
 <h1>Copyright 2010 Google Inc. All Rights Reserved.</h1>
-<h1></h1>
-<h1>Licensed under the Apache License, Version 2.0 (the "License");</h1>
+
+<h1>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</h1>
+
 <h1>you may not use this file except in compliance with the License.</h1>
+
 <h1>You may obtain a copy of the License at</h1>
-<h1></h1>
+
 <h1>http://www.apache.org/licenses/LICENSE-2.0</h1>
-<h1></h1>
+
 <h1>Unless required by applicable law or agreed to in writing, software</h1>
-<h1>distributed under the License is distributed on an "AS IS" BASIS,</h1>
+
+<h1>distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</h1>
+
 <h1>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</h1>
+
 <h1>See the License for the specific language governing permissions and</h1>
+
 <h1>limitations under the License.</h1>
-<p>"""Google Fusion Tables client library."""</p>
+
+<p>&quot;&quot;&quot;Google Fusion Tables client library.&quot;&quot;&quot;</p>
+
 <p>import cookielib
 import csv
 import getpass
@@ -84,20 +94,22 @@ import os
 import time
 import urllib
 import urllib2</p>
+
 <p>class FTClient(object):
-    """Fusion Table SQL API wrapper."""</p>
+    &quot;&quot;&quot;Fusion Table SQL API wrapper.&quot;&quot;&quot;</p>
+
 <pre><code>def __init__(self, auth_token):
-    self.ft_host = 'http://tables.googlelabs.com'
-    self.api_path = '/api/query'
+    self.ft_host = &#39;http://tables.googlelabs.com&#39;
+    self.api_path = &#39;/api/query&#39;
     self.auth_token = auth_token
 
 def runGetQuery(self, query):
-    """Issue a GET query to the Fusion Tables API and return the result."""
-    encoded_query_params = urllib.urlencode({'sql': query})
-    path = self.ft_host + self.api_path + '?' + encoded_query_params
-    data = ''
+    &quot;&quot;&quot;Issue a GET query to the Fusion Tables API and return the result.&quot;&quot;&quot;
+    encoded_query_params = urllib.urlencode({&#39;sql&#39;: query})
+    path = self.ft_host + self.api_path + &#39;?&#39; + encoded_query_params
+    data = &#39;&#39;
     headers = {
-        'Authorization': 'GoogleLogin auth=' + self.auth_token,
+        &#39;Authorization&#39;: &#39;GoogleLogin auth=&#39; + self.auth_token,
     }
     serv_req = urllib2.Request(path, data, headers)
     serv_resp = urllib2.urlopen(serv_req)
@@ -106,15 +118,15 @@ def runGetQuery(self, query):
     return serv_resp_body
 
 def runPostQuery(self, query):
-    """Issue a POST query to the Fusion Tables API and return the result."""
+    &quot;&quot;&quot;Issue a POST query to the Fusion Tables API and return the result.&quot;&quot;&quot;
     path = self.ft_host + self.api_path
-    data = urllib.urlencode({'sql': query})
+    data = urllib.urlencode({&#39;sql&#39;: query})
     headers = {
-        'Authorization': 'GoogleLogin auth=' + self.auth_token,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        &#39;Authorization&#39;: &#39;GoogleLogin auth=&#39; + self.auth_token,
+        &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;,
     }
 
-    # Debug code -- uncomment if you need to see what's on the wire
+    # Debug code -- uncomment if you need to see what&#39;s on the wire
     # h = urllib2.HTTPHandler(debuglevel=1)
     # opener = urllib2.build_opener(h)
     # urllib2.install_opener(opener)
@@ -126,34 +138,34 @@ def runPostQuery(self, query):
     return serv_resp_body
 
 def createTable(self, table_name, column_names_and_types):
-    """Creates a table in Fusion Tables and returns the table ID."""
-    column_defs = ', '.join(["'%s':%s" % c for c in column_names_and_types])
-    query = 'CREATE TABLE %s (%s)' % (table_name, column_defs)
+    &quot;&quot;&quot;Creates a table in Fusion Tables and returns the table ID.&quot;&quot;&quot;
+    column_defs = &#39;, &#39;.join([&quot;&#39;%s&#39;:%s&quot; % c for c in column_names_and_types])
+    query = &#39;CREATE TABLE %s (%s)&#39; % (table_name, column_defs)
     response = self.runPostQuery(query)
     # Grab the table id from the response
-    table_id = response.split('\n')[1]
+    table_id = response.split(&#39;\n&#39;)[1]
 
     return table_id
 
 def createTableFromCSV(self, filename, table_name=None, type_mappings=None):
-    """Create a table in Fusion Tables from a CSV file with a header."""
+    &quot;&quot;&quot;Create a table in Fusion Tables from a CSV file with a header.&quot;&quot;&quot;
     type_mappings = type_mappings or {}
 
     fin = open(filename)
     csv_reader = csv.reader(fin)
     cols = csv_reader.next()
-    columns_and_types = [(c, type_mappings.get(c, 'STRING')) for c in cols]
+    columns_and_types = [(c, type_mappings.get(c, &#39;STRING&#39;)) for c in cols]
 
     table_id = self.createTable(table_name or filename, columns_and_types)
 
     return table_id
 
 def uploadCSV(self, table_id, filename, bulk=True):
-    """Upload a CSV to an existing table."""
+    &quot;&quot;&quot;Upload a CSV to an existing table.&quot;&quot;&quot;
     fin = open(filename)
     csv_reader = csv.reader(fin)
     header_parts = csv_reader.next()
-    col_keys = ','.join(["'%s'" % s for s in header_parts])
+    col_keys = &#39;,&#39;.join([&quot;&#39;%s&#39;&quot; % s for s in header_parts])
     start_time = time.time()
 
     if bulk:
@@ -164,9 +176,9 @@ def uploadCSV(self, table_id, filename, bulk=True):
             num_in_batch = 0
             queries = []
             for line_parts in csv_reader:
-                line_parts = [s.replace("'", "''") for s in line_parts]
-                fixed_line = ','.join(["'%s'" % s for s in line_parts])
-                query = 'INSERT INTO %s (%s) VALUES (%s)' % (
+                line_parts = [s.replace(&quot;&#39;&quot;, &quot;&#39;&#39;&quot;) for s in line_parts]
+                fixed_line = &#39;,&#39;.join([&quot;&#39;%s&#39;&quot; % s for s in line_parts])
+                query = &#39;INSERT INTO %s (%s) VALUES (%s)&#39; % (
                     table_id, col_keys, fixed_line)
                 queries.append(query)
                 num_in_batch += 1
@@ -174,90 +186,93 @@ def uploadCSV(self, table_id, filename, bulk=True):
                     break
 
             try:
-                full_query = ';'.join(queries)
+                full_query = &#39;;&#39;.join(queries)
                 self.runPostQuery(full_query)
             except urllib2.HTTPError:
                 # Had an error with all the INSERTS; do them one at a time
-                print 'Exception hit, subdividing:'
+                print &#39;Exception hit, subdividing:&#39;
                 for query in queries:
                     try:
                         self.runPostQuery(query)
                     except urllib2.HTTPError, e2:
-                        print 'Error at query %s:' % query
+                        print &#39;Error at query %s:&#39; % query
                         print e2
 
-                print 'Appended %d rows' % num_in_batch
+                print &#39;Appended %d rows&#39; % num_in_batch
 
     else:
         # Upload one line at a time
         for line_parts in csv_reader:
-            line_parts = [s.strip("'") for s in line_parts]
-            fixed_line = ','.join(["'%s'" % s for s in line_parts])
-            query = 'INSERT INTO %s (%s) VALUES (%s)' % (
+            line_parts = [s.strip(&quot;&#39;&quot;) for s in line_parts]
+            fixed_line = &#39;,&#39;.join([&quot;&#39;%s&#39;&quot; % s for s in line_parts])
+            query = &#39;INSERT INTO %s (%s) VALUES (%s)&#39; % (
                 table_id, col_keys, fixed_line)
             self.runPostQuery(query)
     end_time = time.time()
-    print 'Time for upload to %s: %f  (bulk: %s)' % (
-        table_id, end_time - start_time, str(bulk))
-</code></pre>
-<h1></h1>
+    print &#39;Time for upload to %s: %f  (bulk: %s)&#39; % (
+        table_id, end_time - start_time, str(bulk))</code></pre>
+
 <h1>ClientLogin stuff</h1>
-<h1></h1>
+
 <h1>This should probably be replaced with the real GData API at some point,</h1>
+
 <h1>but now for convenience these functions are included here</h1>
-<h1></h1>
+
 <p>def GoogleClientLogin(username, pw):
-    """Log in to google accounts and return the authorization token."""
+    &ldquo;&rdquo;&ldquo;Log in to google accounts and return the authorization token.&rdquo;&ldquo;&rdquo;
     # we use a cookie to authenticate with Google App Engine
     #  by registering a cookie handler here, this will automatically store the
     #  cookie returned when we use urllib2
     cookiejar = cookielib.LWPCookieJar()
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookiejar))
     urllib2.install_opener(opener)</p>
+
 <pre><code>#
 # get an AuthToken from Google accounts
 #
-auth_uri = 'https://www.google.com/accounts/ClientLogin'
+auth_uri = &#39;https://www.google.com/accounts/ClientLogin&#39;
 authreq_data = urllib.urlencode({
-    'Email': username,
-    'Passwd': pw,
-    'service': 'fusiontables',
-    'accountType': 'HOSTED_OR_GOOGLE'})
+    &#39;Email&#39;: username,
+    &#39;Passwd&#39;: pw,
+    &#39;service&#39;: &#39;fusiontables&#39;,
+    &#39;accountType&#39;: &#39;HOSTED_OR_GOOGLE&#39;})
 auth_req = urllib2.Request(auth_uri, data=authreq_data)
 auth_resp = urllib2.urlopen(auth_req)
 auth_resp_body = auth_resp.read()
-# auth response includes several fields - we're interested in
+# auth response includes several fields - we&#39;re interested in
 #  the bit after Auth=
 auth_resp_dict = dict(
-    x.split('=') for x in auth_resp_body.split('\n') if x)
-authtoken = auth_resp_dict['Auth']
-return authtoken
-</code></pre>
+    x.split(&#39;=&#39;) for x in auth_resp_body.split(&#39;\n&#39;) if x)
+authtoken = auth_resp_dict[&#39;Auth&#39;]
+return authtoken</code></pre>
+
 <p>def GetAuthToken(users_email_address=None, users_password=None):
-    """Tries to log in and returns auth token. Saves token for future use.</p>
+    &ldquo;&rdquo;&ldquo;Tries to log in and returns auth token. Saves token for future use.</p>
+
 <pre><code>Will prompt for password if not present.
-"""
-# Check to see if it's on disk
-if (os.path.exists('.ftclient_authtoken')):
-    token = open('.ftclient_authtoken').read().strip()
+&quot;&quot;&quot;
+# Check to see if it&#39;s on disk
+if (os.path.exists(&#39;.ftclient_authtoken&#39;)):
+    token = open(&#39;.ftclient_authtoken&#39;).read().strip()
 else:
     if not users_email_address:
-        users_email_address = raw_input('Email address:')
+        users_email_address = raw_input(&#39;Email address:&#39;)
     if not users_password:
         users_password = getpass.getpass(
-            'Password for %s: ' % users_email_address)
+            &#39;Password for %s: &#39; % users_email_address)
 
     token = GoogleClientLogin(users_email_address, users_password)
 
-    fout = open('.ftclient_authtoken', 'w')
+    fout = open(&#39;.ftclient_authtoken&#39;, &#39;w&#39;)
     fout.write(token)
     fout.close()
 
-return token
-</code></pre>
-<p>if <strong>name</strong> == '<strong>main</strong>':
+return token</code></pre>
+
+<p>if <strong>name</strong> == &#39;<strong>main</strong>&#39;:
     pass</pre>
 </pre></p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">

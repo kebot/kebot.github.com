@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2011/6/%e7%94%a8commandline-cocoa%e5%9c%a8%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e5%bf%ab%e9%80%9f%e8%b0%83%e8%af%95objective-ccocoa%e4%bb%a3%e7%a0%81/" />
@@ -41,28 +41,28 @@
              
 <div class="entry">
     <div class="entry-content">
-        <p>学习一门语言是一个不断试错的过程,对于我来说,脚本语言的方便之处是可以快速地运行,调试... PHP,Python,JavaScript...这些脚本语言都可以不借助第三方工具,快速进行调试...</p>
-
+        <p>学习一门语言是一个不断试错的过程,对于我来说,脚本语言的方便之处是可以快速地运行,调试&hellip; PHP,Python,JavaScript&hellip;这些脚本语言都可以不借助第三方工具,快速进行调试&hellip;</p>
 <p> </p>
-
-<p><hr />
-<p>有时候你只想测试一段小小的代码片断 -- 或许是看看 NSDateFormatter 在不同情况下的输出,测试一些文本替换的方法(testing out some text replacement routine),或者是测试下画图</p>
+<hr />
+<p>有时候你只想测试一段小小的代码片断 &ndash; 或许是看看 NSDateFormatter 在不同情况下的输出,测试一些文本替换的方法(testing out some text replacement routine),或者是测试下画图</p>
 <p> </p>
-<p>对于Objective-C的学习来说,每次想试验一个小功能,或者运行一段小代码,都需要新建一个XCode Project 然后导入相应的Framework来进行Simple test,这是经常的事,这是"我"(指作者)为什么我把这些 shell script 整理出来让你在终端运行Cocoa代码.</p>
-<pre lang="sh">$ runcocoa 'NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease]; [formatter setDateFormat:@"d MMM, h:mm a"]; NSLog(@"%@", [formatter stringFromDate:[NSDate date]]);'</p>
-<p>2011-02-23 20:02:10.313 runcocoa-output[28025:903] 23 Feb, 8:02 PM
+<p>对于Objective-C的学习来说,每次想试验一个小功能,或者运行一段小代码,都需要新建一个XCode Project 然后导入相应的Framework来进行Simple test,这是经常的事,这是&quot;我&quot;(指作者)为什么我把这些 shell script 整理出来让你在终端运行Cocoa代码.</p>
+<pre lang="sh">$ runcocoa 'NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease]; [formatter setDateFormat:@"d MMM, h:mm a"]; NSLog(@"%@", [formatter stringFromDate:[NSDate date]]);'
+
+2011-02-23 20:02:10.313 runcocoa-output[28025:903] 23 Feb, 8:02 PM
 </pre>
 <p>你可以直接从命令行完全访问各种Cocoa资源库,还有在iOS模式,你也可以访问iOS的部分.</p>
-<p>更新:现在可以在 <a href="https://github.com/michaeltyson/Commandline-Cocoa">Github 中找到这个项目</a></p>
-<p>你可以把代码当做命令行参数, 也可以使用标准输入输出,所以你可以用管道.这对TextMate 使用者非常方便: 打一些代码,然后输入 <strong> Cmd-Option-R </strong> ,输入 'runcocoa' , 回车,然后就能看到结果了.</p>
+<p>更新:现在可以在 [Github 中找到这个项目](https://github.com/michaeltyson/Commandline-Cocoa)</p>
+<p>你可以把代码当做命令行参数, 也可以使用标准输入输出,所以你可以用管道.这对TextMate 使用者非常方便: 打一些代码,然后输入 ** Cmd-Option-R ** ,输入 &lsquo;runcocoa&rsquo; , 回车,然后就能看到结果了.</p>
 <p>明白了?</p>
-<p>你也引入别的framework (比如:使用 <strong> -include AudioToolbox/AudioToolbox.h -framework AudioToolbox </strong> 作为命令行参数),然后用gdb模式运行代码(带上 -gdb 参数).</p>
+<p>你也引入别的framework (比如:使用 ** -include AudioToolbox/AudioToolbox.h -framework AudioToolbox ** 作为命令行参数),然后用gdb模式运行代码(带上 -gdb 参数).</p>
 <p>你也可以给命令加上 -ios 参数来运行iOS代码,试试这个:</p>
-<pre lang="sh">runcocoa -ios 'UIGraphicsBeginImageContext(CGSizeMake(100,100)); CGContextRef ctx = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(ctx,[[UIColor whiteColor] CGColor]); CGContextBeginPath(ctx); CGContextMoveToPoint(ctx, 50, 0); CGContextAddArc(ctx, 50, 50, 50, M_PI/2.0, M_PI/2.0 + (2<em>M_PI), 0); CGContextFillPath(ctx); UIImage </em>icon = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://atastypixel.com/favicon.ico"]]]; [icon drawAtPoint:CGPointMake((100-[icon size].width)/2.0,(100-[icon size].height)/2.0)]; UIImage *i = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext(); [UIImagePNGRepresentation(i) writeToFile:@"output.png" atomically:NO];'; open output.png;
+<pre lang="sh">runcocoa -ios 'UIGraphicsBeginImageContext(CGSizeMake(100,100)); CGContextRef ctx = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(ctx,[[UIColor whiteColor] CGColor]); CGContextBeginPath(ctx); CGContextMoveToPoint(ctx, 50, 0); CGContextAddArc(ctx, 50, 50, 50, M_PI/2.0, M_PI/2.0 + (2*M_PI), 0); CGContextFillPath(ctx); UIImage *icon = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://atastypixel.com/favicon.ico"]]]; [icon drawAtPoint:CGPointMake((100-[icon size].width)/2.0,(100-[icon size].height)/2.0)]; UIImage *i = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext(); [UIImagePNGRepresentation(i) writeToFile:@"output.png" atomically:NO];'; open output.png;
 </pre>
-<a href="http://atastypixel.com/blog/objective-c-cocoa-on-the-command-line/">原文链接</a>
+[原文链接](http://atastypixel.com/blog/objective-c-cocoa-on-the-command-line/)
 <p><a href="http://atastypixel.com/blog/objective-c-cocoa-on-the-command-line/">http://atastypixel.com/blog/objective-c-cocoa-on-the-command-line/</a></p>
-<p> </p></p>
+<p> </p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">

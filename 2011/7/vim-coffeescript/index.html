@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2011/7/vim-coffeescript/" />
@@ -42,12 +42,19 @@
 <div class="entry">
     <div class="entry-content">
         <h1>神马是CoffeeScript</h1>
+
 <p><a href="http://jashkenas.github.com/coffee-script/">Coffee Script</a> 就是 JavaScript 但它比 JavaScript 有更好的语法,更简介的代码,更规范的编码规范,它留下了JavaScript 好的部分,去掉了不好的部分.</p>
+
 <p>这是CoffeeScript的介绍页面:<a href="http://jashkenas.github.com/coffee-script/">http://jashkenas.github.com/coffee-script/</a></p>
+
 <p>你可以用TRY COFFEESCRIPT尝试写一些script,然后程序会时时显示转换后的javascript代码.</p>
+
 <h1>用VIM写CoffeeScript</h1>
+
 <p>但我是用VIM写的代码,VIM需要一些配置,索幸,有人已经写了VIM的coffee script插件,地址在这里:<a href="https://github.com/kchmck/vim-coffee-script">https://github.com/kchmck/vim-coffee-script</a></p>
+
 <p>下面以Mac为例介绍下VIM配置CoffeeScript开发环境:</p>
+
 <pre lang="bash">
 # 安装node.js
 brew install node.js
@@ -64,6 +71,7 @@ autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
 </pre>
 
 <p>接着随便打开.coffee文件,写一点代码,保存的时候vim会自动生成 .js 文件</p>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">

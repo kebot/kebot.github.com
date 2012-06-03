@@ -10,7 +10,7 @@
 <meta name="author" content="Kebot" />
 
         
-        <link rel="alternate" type="application/rss+xml" href="/feed/" title="Kebot | Keith is Robot Feed" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Kebot | Keith is Robot Feed" />
         <link rel="stylesheet" href="/static/style.css?v=986af" />
         
 <link rel="canonical" href="/2012/4/ender/" />
@@ -42,49 +42,65 @@
 <div class="entry">
     <div class="entry-content">
         <p>写过<code>Python</code>之后觉得，对一门好的语言来说，一个好的包管理器是非常重要的。</p>
+
 <p><code>JavaScript</code> 发展正旺，而这是一门现在的程序员或多或少会接触的语言，用过<code>Python</code>之后再回来用 <code>JavaScript</code> 有很多不尽如人意的地方.</p>
+
 <h4>语法</h4>
+
 <p>JavaScript 有些不尽如人意的地方, <a href="http://coffeescript.org/" title="CoffeeScript">CoffeeScript</a> 的出现, Coffee就是Java, 所以 CoffeeScript本身就是JavaScript,除了语法,其他的都相同,所以没什么学习门槛和迁移成本</p>
+
 <p><a href="http://coffeescript.org/" title="CoffeeScript">CoffeeScript</a> 借鉴了很多 <code>Ruby</code> 和 <code>Python</code> 的优点, 同时保留了JavaScript的特点,让 JavaScript写起来更舒心了.出了缩进的语法外,增加的 <code>class</code> 功能让 JavaScript的类定义显得优雅了不少.</p>
+
 <p>下面是示例代码:</p>
+
 <pre><code>class CoffeeScript extends JavaScript
     constructor: (@name)-&gt;
-        console.log 'Hello #{name}'
-</code></pre>
+        console.log &#39;Hello #{name}&#39;</code></pre>
+
 <p>具体按照使用的教程参见官网 ( @TODO add links here )</p>
+
 <h4>包管理</h4>
+
 <p>对于一门语言来说,一个统一的包管理工具非常重要,这样子,安装依赖,利用别人的劳动成果都非常方便, 写代码现在已经是一个叠积木的过程, 利用前人的劳动成果是必然的.</p>
+
 <p>对于JavaScript来说, 已经存在这样的工具了, 那就是 <code>npm</code>, 不过作为<code>node.js</code>的包管理工具, 用来管理浏览器的JavaScript更显得麻烦, 我一直企图在CoffeeScript里面用 <code>import</code> 语句, 想导入一个模块文件来.</p>
+
 <p>对于浏览器来说,开发人员一直用在html里面依次加载js文件的方式导入js库,为了让开发人员更方便,很多js库做得越来越臃肿, 比如jquery, 包含了你所想用的大部分功能, 其实在一个小的网页里, 你能用到的功能是很少的.</p>
+
 <p>比如想得到jQuery库的功能, 可以这样:</p>
+
 <p><code>ender build jeesh reqwest</code></p>
-<pre><code>├── reqwest@0.3.3 - A wrapper for asynchronous http requests
-├─┬ jeesh@0.0.6 - The official starter pack for Ender.
-| ├── bean@0.3.0 - an events api for javascript
-| ├── bonzo@0.8.0 - Library agnostic, extensible DOM utility
-| ├── domready@0.2.10 - bullet proof DOM ready method
-| └── qwery@3.1.1 - blazing fast CSS3 query selector engine
-</code></pre>
+
 <p>各个库都可以单独拿出来用, 也可以和 <code>$</code> 命令结合. 在浏览器端, 终于可以用 require 语句了.</p>
+
 <p><code>ender build underscore</code></p>
-<pre><code>_ = require 'underscore'
-_({a: 'b'}).each (a, b)-&gt;
-    console a, b
-</code></pre>
+
+<pre><code>_ = require &#39;underscore&#39;
+_({a: &#39;b&#39;}).each (a, b)-&gt;
+    console a, b</code></pre>
+
 <p>一切看起来这么优雅, 不是嘛?</p>
+
 <h4>结论</h4>
+
 <p>这些工具都是出自 <code>node.js</code> 社区, 所有的依赖需要 <code>Linux / Mac</code> ,Windows下面我没跑过, 估计想跑也不是什么容易的事情.</p>
+
 <p>对于普通程序员来说, 这些东西还是略显得麻烦了, 要普及的话需要降低使用门槛, 不过生命在于折腾, 现在这么多工具的出现是为了更方便地写出代码, 正因为大家都这么折腾, 程序的世界才显得那么有趣.</p>
+
 <h4>TIPS</h4>
+
 <ul>
 <li>npm 在国内访问速度过慢, 可以增加镜像访问:<a href="http://nodeblog.org/post/4ec36ebf363fd5e364000001">http://nodeblog.org/post/4ec36ebf363fd5e364000001</a></li>
 </ul>
+
     </div>
     <div class="fn-clear">
         <p class="entry-rel fn-right">
         
+        <a id="prev-entry" href="/2012/4/nginx-with-php-in-macosx/" title="在 Mac 上部署 Nginx" rel="prev">«Prev</a>
         
-        <a id="next-entry" href="/gituns/compass/" title="Sass and Compass" rel="next">Next»</a>
+        
+        <a id="next-entry" href="/2012/2/compass/" title="Sass and Compass" rel="next">Next»</a>
         
         </p>
     </div>
